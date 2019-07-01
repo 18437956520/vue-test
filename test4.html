@@ -24,6 +24,8 @@
         <span v-html="banana"></span> <br>
         <hr>
         <div v-bind:class="className"></div>
+        <hr>
+        <button v-on:click="count">{{countnum}}</button>
     </div>
     <script>
         var plusDate = function(value){
@@ -35,7 +37,8 @@
                 date: new Date(),
                 apple:'🍎苹果',
                 banana:'<span style="color: pink">香蕉</span>',
-                className:'transRed'
+                className:'transRed',
+                countnum:0
             },
             filters:{
                 formatDate:function(value){
@@ -48,6 +51,11 @@
                     var sec = plusDate(date.getSeconds())                    
                 
                     return year+'-'+month+'-'+day+'  '+hour+':'+min+':'+sec+' (CHN) '
+                }
+            },
+            methods:{
+                count:function(){
+                    this.countnum = this.countnum+1
                 }
             },
             mounted:function(){

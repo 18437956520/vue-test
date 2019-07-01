@@ -25,7 +25,8 @@
         <hr>
         <div v-bind:class="className"></div>
         <hr>
-        <button v-on:click="count">{{countnum}}</button>
+        <button v-on:click="count">{{countnum}}</button> <br>
+        <button @:click="count">{{countnum}}</button>
     </div>
     <script>
         var plusDate = function(value){

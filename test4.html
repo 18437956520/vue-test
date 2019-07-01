@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        .transRed{
+            height: 20px;
+            background-color: red;
+        }
+    </style>
 </head>
 <body>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
@@ -16,6 +22,8 @@
         {{apple}} <br>
         {{banana}} <br>
         <span v-html="banana"></span> <br>
+        <hr>
+        <div v-bind:class="className"></div>
     </div>
     <script>
         var plusDate = function(value){
@@ -26,7 +34,8 @@
             data:{
                 date: new Date(),
                 apple:'🍎苹果',
-                banana:'<span style="color: pink">香蕉</span>'
+                banana:'<span style="color: pink">香蕉</span>',
+                className:'transRed'
             },
             filters:{
                 formatDate:function(value){

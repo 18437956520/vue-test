@@ -13,7 +13,9 @@
         {{date | formatDate}} <br>
         <!-- {{date | formatDate}} <br> -->
         <span v-text="apple"></span> <br>
-        {{apple}}
+        {{apple}} <br>
+        {{banana}} <br>
+        <span v-html="banana"></span> <br>
     </div>
     <script>
         var plusDate = function(value){
@@ -23,7 +25,8 @@
             el:"#dateApp",
             data:{
                 date: new Date(),
-                apple:'🍎苹果'
+                apple:'🍎苹果',
+                banana:'<span style="color: pink">香蕉</span>'
             },
             filters:{
                 formatDate:function(value){

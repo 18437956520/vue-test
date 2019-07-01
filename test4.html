@@ -23,10 +23,11 @@
         {{banana}} <br>
         <span v-html="banana"></span> <br>
         <hr>
-        <div v-bind:class="className"></div>
+        <div v-bind:class="className"></div> <br>
+        <div :class="className"></div> 
         <hr>
         <button v-on:click="count">{{countnum}}</button> <br>
-        <button @:click="count">{{countnum}}</button>
+        <button @click="count">{{countnum}}</button>
     </div>
     <script>
         var plusDate = function(value){

@@ -14,6 +14,12 @@
         {{prices}}
     </div>
     <script>
+        var app2 = new Vue({
+            el:'',
+            data:{
+                msg:'wo shi app2'
+            }
+        })
         var app = new Vue({
             el: '#demo',
             data: {
@@ -49,7 +55,7 @@
                     for (var j = 0; j < this.package2.length; j++) {
                         prices += this.package2[j].price * this.package2[j].count
                     }
-                    return prices 
+                    return prices + '------' + app2.msg
                 }
             }
         })

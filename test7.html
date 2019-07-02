@@ -19,8 +19,18 @@
                 lastName: 'qq'
             },
             computed:{
-                fullName:function(){
+                /* fullName:function(){
                     return this.firstName + ' ' + this.lastName
+                } */
+                fullName:{
+                    get:function(){
+                        return this.firstName + ' ' + this.lastName
+                    },
+                    set:function(newValue){
+                        var names = newValue.split(',')
+                            this.firstName = names[0]
+                            this.lastName = names[1]
+                    }
                 }
             }
         })

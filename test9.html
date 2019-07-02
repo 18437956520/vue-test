@@ -11,19 +11,35 @@
             width: 100px;
             height: 20px;
         }
+        .border{
+            border: 2px solid blue;
+        }
+        .btn{
+            background-color: #80D740;
+            outline: none;
+            
+        }
     </style>
 </head>
 <body>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
     <div id="app">
-        <div :class="{div: isActive}"></div>
-
+        <div :class="{div: isActive, border: isBorder}"></div>
+        <hr>
+        <button :class="{btn: isbtn}" @click="changecolor">点我 弟弟</button>
     </div>
     <script>
         var app = new Vue({
             el:'#app',
             data:{
-                isActive: true
+                isActive: true,
+                isBorder: true,
+                isbtn: true
+            },
+            methods:{
+                changecolor:function(){
+                    this.isbtn = !this.isbtn
+                }
             }
         })
     </script>

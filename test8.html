@@ -9,13 +9,15 @@
 <body>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
     <div id="app">
-
+        <a :href="url">bing</a>
+        <img :src="imgUrl" alt="">
     </div>
     <script>
         var app = new Vue({
             el:'#app',
             data:{
-
+                url: 'https://cn.bing.com',
+                imgUrl: 'https://cn.bing.com/th?id=OHR.BailysBeads_ZH-CN5728297739_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp'
             }
         })
     </script>

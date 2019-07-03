@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+    <div id="app">
+        <div @click="divclick" style="height: 100px; width: 100px; background-color: #a72821;">
+            <button @click="btnclick">button</button>
+        </div>
+    </div>
+    <script>
+        var app = new Vue({
+            el:'#app',
+            data:{
+
+            },
+            methods:{
+                divclick:function(){
+                    alert('div')
+                },
+                btnclick:function(){
+                    alert('btn')
+                }
+            }
+        })
+    </script>
+</body>
+</html>

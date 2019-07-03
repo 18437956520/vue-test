@@ -14,6 +14,12 @@
         <ul>
             <li v-for="vueMth in vueMethods">{{vueMth.name}}</li>
         </ul>
+        <hr>
+        2 带索引的写法
+        <ul>
+            <li v-for="(vueMth,index) in vueMethods">{{index+1}}---{{vueMth.name}}</li>
+        </ul>
+        
     </div>
     <script>
         var app = new Vue({

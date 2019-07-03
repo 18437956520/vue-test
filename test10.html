@@ -11,18 +11,22 @@
             width: 100px;
             background-color: #FF5A67;
         }
+        .err{
+            border: 2px solid black;
+        }
     </style>
 </head>
 <body>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
     <div id="app">
-        <div :class="{act: Act}"></div>
+        <div :class="[Act, Err]">mmm</div>
     </div>
     <script>
         var app = new Vue({
             el:'#app',
             data:{
-                Act: true
+                Act: 'act',
+                Err: 'err' 
             }
         })
     </script>

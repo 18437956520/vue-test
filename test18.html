@@ -13,6 +13,10 @@
             <button @click.stop="btnclick">button</button>
 
         </div>
+        <hr>
+        <form action="" @submit.prevent="hangle" style="border: 1px red solid; height: 100px;">
+            <button type="submit">submit</button>
+        </form> 
     </div>
     <script>
         var app = new Vue({
@@ -26,6 +30,9 @@
                 },
                 btnclick:function(){
                     alert('btn')
+                },
+                hangle:function(){
+                    alert('不刷新')
                 }
             }
         })

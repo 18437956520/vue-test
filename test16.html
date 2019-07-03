@@ -13,6 +13,8 @@
         <hr>
         <button @click="btnArr">正序</button>
         <button @click="reverseArr">逆序</button>
+        <hr>
+        {{matchOO}}
     </div>
     <script>
         var app = new Vue({
@@ -32,6 +34,13 @@
                 },
                 reverseArr:function(){
                     this.arr.reverse()
+                }
+            },
+            computed:{
+                matchOO:function(){
+                    return this.arr.filter(function(book){
+                        return book.match(/oo/)
+                    })
                 }
             }
         })

@@ -9,8 +9,8 @@
 <body>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
     <div id="app">
-        <div @click="divclick" style="height: 100px; width: 100px; background-color: #a72821;">
-            <button @click.stop="btnclick">button</button>
+        <div @click.self="divclick" style="height: 100px; width: 100px; background-color: #a72821;">
+            <button @click="btnclick">button</button>
 
         </div>
         <hr>

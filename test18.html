@@ -20,6 +20,8 @@
         <hr>
         <button @click="onceMethod">无限次</button>
         <button @click.once="onceMethod">就一次</button>
+        <hr>
+        <input @keyup.13="submit">
     </div>
     <script>
         var app = new Vue({
@@ -39,6 +41,9 @@
                 },
                 onceMethod:function(){
                     alert('就一次 臭弟弟')
+                },
+                submit:function(){
+                    alert('enter')
                 }
             }
         })

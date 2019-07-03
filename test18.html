@@ -17,6 +17,9 @@
         <form action="" @submit.prevent="hangle" style="border: 1px red solid; height: 100px;">
             <button type="submit">submit</button>
         </form> 
+        <hr>
+        <button @click="onceMethod">无限次</button>
+        <button @click.once="onceMethod">就一次</button>
     </div>
     <script>
         var app = new Vue({
@@ -33,6 +36,9 @@
                 },
                 hangle:function(){
                     alert('不刷新')
+                },
+                onceMethod:function(){
+                    alert('就一次 臭弟弟')
                 }
             }
         })

@@ -19,14 +19,14 @@
 <body>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
     <div id="app">
-        <div :class="[Act, Err]">mmm</div>
+        <div :style="{color: backgroundColor, fontSize: size}">mmm</div>
     </div>
     <script>
         var app = new Vue({
             el:'#app',
             data:{
-                Act: 'act',
-                Err: 'err' 
+                backgroundColor: 'green',
+                size: '50px'
             }
         })
     </script>

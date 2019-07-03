@@ -11,7 +11,8 @@
     <div id="app">
         <div v-for="apple in arr">{{apple}}</div>
         <hr>
-        <button @click="btnArr"></button>
+        <button @click="btnArr">正序</button>
+        <button @click="reverseArr">逆序</button>
     </div>
     <script>
         var app = new Vue({
@@ -28,6 +29,9 @@
                     this.arr.sort(function(a,b){
                         return a.length-b.length
                     })
+                },
+                reverseArr:function(){
+                    this.arr.reverse()
                 }
             }
         })

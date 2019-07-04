@@ -14,13 +14,27 @@
         <hr>
         <textarea name="" id="" cols="30" rows="3" v-model="msg">初始化</textarea>
         {{msg}}
+        <hr>
+        单选框
+        <input type="radio" :checked="oneradio">
+        <hr>
+        多个单选框 <br>
+        1.<input type="radio" name="checks" value="1" v-model="checkname"> <br>
+        2.<input type="radio" name="checks" value="2" v-model="checkname"> <br>
+        3.<input type="radio" name="checks" value="3" v-model="checkname"> <br>
+        选中☑️{{checkname}}
+        <hr>
+        单个复选框 <br>
+        <input type="checkbox" name="" :checked="oneradio" id="">
     </div>
     <script>
         var app = new Vue({
             el:'#app',
             data:{
                 value:'',
-                msg:''
+                msg:'',
+                oneradio:true,
+                checkname:'2'
             }
         })
     </script>

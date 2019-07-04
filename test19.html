@@ -55,6 +55,8 @@
         <hr>
         <input type="text" v-model="str"> {{str}} <br>
         <input type="text" v-model.lazy="lazystr"> {{lazystr}} <br>
+        <hr>
+        <input type="text" v-model.number="isnum"> {{typeof isnum}}
     </div>
     <script>
         var app = new Vue({
@@ -68,7 +70,9 @@
                 selected:'',
                 selectedmul:'',
                 str:'',
-                lazystr:''
+                lazystr:'',
+                isnum:'',
+                
             }
         })
     </script>

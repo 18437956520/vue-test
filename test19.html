@@ -50,6 +50,11 @@
                 <option value="3">3</option>
         </select>
         {{selectedmul}}
+        <hr>
+        <hr>
+        <hr>
+        <input type="text" v-model="str"> {{str}} <br>
+        <input type="text" v-model.lazy="lazystr"> {{lazystr}} <br>
     </div>
     <script>
         var app = new Vue({
@@ -61,7 +66,9 @@
                 checkname:'2',
                 checks:[],
                 selected:'',
-                selectedmul:''
+                selectedmul:'',
+                str:'',
+                lazystr:''
             }
         })
     </script>

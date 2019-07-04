@@ -34,6 +34,22 @@
         2<input type="checkbox" value="2" v-model="checks"> <br>
         3<input type="checkbox" value="3" v-model="checks"> <br>
         {{checks}}
+        <hr>
+        下拉框  <br>
+        单选 <br>
+        <select v-model="selected">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+        {{selected}}
+        <hr>
+        <select v-model="selectedmul" multiple>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+        </select>
+        {{selectedmul}}
     </div>
     <script>
         var app = new Vue({
@@ -43,7 +59,9 @@
                 msg:'',
                 oneradio:true,
                 checkname:'2',
-                checks:[]
+                checks:[],
+                selected:'',
+                selectedmul:''
             }
         })
     </script>

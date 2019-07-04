@@ -17,6 +17,7 @@
         <hr>
         单选框
         <input type="radio" :checked="oneradio">
+        <input type="radio" :checked="oneradio">
         <hr>
         多个单选框 <br>
         1.<input type="radio" name="checks" value="1" v-model="checkname"> <br>
@@ -27,6 +28,12 @@
         单个复选框 <br>
         <input type="checkbox" name="" :checked="oneradio" id=""> <br>
         <input type="checkbox" name="" v-model="oneradio" id="">
+        <hr>
+        多个复选框 <br>
+        1<input type="checkbox" value="1" v-model="checks"> <br>
+        2<input type="checkbox" value="2" v-model="checks"> <br>
+        3<input type="checkbox" value="3" v-model="checks"> <br>
+        {{checks}}
     </div>
     <script>
         var app = new Vue({
@@ -35,7 +42,8 @@
                 value:'',
                 msg:'',
                 oneradio:true,
-                checkname:'2'
+                checkname:'2',
+                checks:[]
             }
         })
     </script>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #app{
+            border: 1px solid red;
+        }
+        #bpp{
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+    <div id="app">
+        <tag></tag>
+        <app-tag></app-tag>
+        <table>
+            <tbody is="tag"></tbody>
+        </table>
+    </div>
+    <hr>
+    <div id="bpp">
+        <tag></tag>
+        <app-tag></app-tag>
+    </div>
+    <script>
+        Vue.component('tag',{
+            template:' <div>wo shi zu jian </div> '
+        })
+
+        var app = new Vue({
+            el:'#app',
+            components:{
+                'app-tag':{
+                    template:'<div> wo you shi zu jian</div>'
+                }
+            },
+            data:{
+
+            }
+        })
+
+        var bpp = new Vue({
+            el:'#bpp',
+            data:{
+
+            }
+        })
+    </script>
+</body>
+</html> 

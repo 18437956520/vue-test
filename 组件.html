@@ -90,13 +90,23 @@
     <div id="app">
         <h5>我是父组件</h5>
         <child-component msg="来自父组件"></child-component>
+        <hr>
+        <input type="text" v-model="parentmsg">
+        <hr>
+        <bind-component :msg="parentmsg"></bind-component>
     </div>
     <script>
         var app = new Vue({
             el: '#app',
-            data: {},
+            data: {
+                parentmsg:'nihao'
+            },
             components: {
                 'child-component': {
+                    props: ['msg'],
+                    template: '<div>{{msg}}</div>'
+                },
+                'bind-component': {
                     props: ['msg'],
                     template: '<div>{{msg}}</div>'
                 }

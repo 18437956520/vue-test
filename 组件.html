@@ -22,6 +22,9 @@
         <table>
             <tbody is="tag"></tbody>
         </table>
+        <hr>
+        <btn-component></btn-component>
+        <btn-component></btn-component>
     </div>
     <hr>
     <div id="bpp">
@@ -38,6 +41,14 @@
             components:{
                 'app-tag':{
                     template:'<div> wo you shi zu jian</div>'
+                },
+                'btn-component':{
+                    template:'<button @click="count++">{{count}}</button>',
+                    data:function(){
+                        return{
+                            count:0
+                        }
+                    }
                 }
             },
             data:{

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -64,4 +64,46 @@
         })
     </script>
 </body>
-</html> 
+</html>  -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #app {
+            border: 2px solid green;
+        }
+
+        h5 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+    <div id="app">
+        <h5>我是父组件</h5>
+        <child-component msg="来自父组件"></child-component>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {},
+            components: {
+                'child-component': {
+                    props: ['msg'],
+                    template: '<div>{{msg}}</div>'
+                }
+            }
+
+        })
+    </script>
+</body>
+
+</html>

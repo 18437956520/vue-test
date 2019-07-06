@@ -73,7 +73,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Document</title> 
     <style>
         #app {
             border: 2px solid green;
@@ -90,6 +90,8 @@
     <div id="app">
         <h5>我是父组件</h5>
         <child-component msg="来自父组件"></child-component>
+        <child-component msg="[1,2,3]"></child-component>
+        <child-component :msg="[1,2,3]"></child-component>
         <hr>
         <input type="text" v-model="parentmsg">
         <hr>
@@ -104,7 +106,7 @@
             components: {
                 'child-component': {
                     props: ['msg'],
-                    template: '<div>{{msg}}</div>'
+                    template: '<div>{{msg.length}}</div>'
                 },
                 'bind-component': {
                     props: ['msg'],

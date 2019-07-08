@@ -15,12 +15,13 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
 
     <div id="app">
-
+        <my-component></my-component>
     </div>
 
     <script>
+        // 注册组件--全局注册
         Vue.component('my-component',{
-            template:'<div></div>'
+            template:'<div>我是一个组件</div>'
         })
 
         var app = new Vue({

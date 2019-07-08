@@ -125,7 +125,7 @@
 </html> -->
 
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -181,6 +181,55 @@
             }
         })
 
+    </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+    <div id="app">
+        <my-component my-msg="222"></my-component>
+        <hr>
+        <type-component :a="a"></type-component>
+    </div>
+    <script>
+        Vue.component('myComponent',{
+            props:['myMsg'],
+            template: '<div>{{aaa}}</div>',
+            data:function(){
+                return{
+                    aaa:this.myMsg
+                }
+            }
+        })
+
+        Vue.component('typeComponent',{
+            props:{
+                a:Number
+            },
+            template: '<div>{{a}}</div>',
+            data:function(){
+                return{
+                    a:this.myMsg
+                }
+            }
+        })
+
+        var app = new Vue({
+            el:'#app',
+            data:{
+                a:1
+            }
+        })
     </script>
 </body>
 </html>

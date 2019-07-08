@@ -16,12 +16,14 @@
 
     <div id="app">
         <my-component></my-component> <br>
-        <app-component></app-component>
+        <app-component></app-component> <br>
+        <bpp-component></bpp-component>
     </div>
     <hr>
     <div id="bpp">
         <my-component></my-component> <br>
         <app-component></app-component>
+        <bpp-component></bpp-component>
     </div>
 
     <script>
@@ -34,7 +36,7 @@
             el:'#app',
             components:{
                 'app-component':{
-                    template:'<div>我是一个局部组件</div>'
+                    template:'<div>我是一个app局部组件</div>'
                 }
             },
             data:{
@@ -44,6 +46,11 @@
 
         var bpp = new Vue({
             el:'#bpp',
+            components:{
+                'bpp-component':{
+                    template:'<div>我是一个bpp局部组件</div>'
+                }
+            },
             data:{
 
             }

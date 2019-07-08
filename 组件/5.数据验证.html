@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+
+    <div id="app">
+        <my-component mymsg="abc"></my-component>
+        <hr>
+        <type-component :a="a" :b="b" :c="c" :d="d" :f="f"></type-component>
+    </div>
+
+    <script>
+        Vue.component('my-component', {
+            props: ['mymsg'],
+            template: '<div>{{abc}}</div>',
+            data: function () {
+                return {
+                    abc: this.mymsg
+                }
+            }
+        })
+
+        Vue.component('type-component', {
+            props: {
+                /* a:Number */
+                a: String,
+                b: [String, Number],
+                c: {
+                    type: Boolean,
+                    default: true
+                },
+                d:{
+                    type:Number,
+                    required:true//必须要传
+                },
+                e:{
+                    type:Array,
+                    default:function(){
+                        return [666]
+                    }
+                },
+                f:{
+                    validator:function(value){
+                        return value<10
+                    }
+                }
+            },
+            template: '<div>{{a}}--{{b}}--{{c}}--{{d}}--{{e}}--{{f}}</div>',
+            data: function () {
+                return {
+                    abc: this.mymsg
+                }
+            }
+        })
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+                /* a:1 */
+                a: '1',
+                b: 2,
+                c: '',
+                d: 8888,
+                e:'',
+                f:99
+            }
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+
+    <div id="app">
+        {{total}}
+        <hr>
+        <son-component v-model="total"></son-component>
+    </div>
+
+    <script>
+        Vue.component('son-component', {
+            template: '<div>\
+            <button @click="handleincrease">+1000</button>\
+            <button @click="handlereduce">-1000</button>\
+            </div>',
+            data: function () {
+                return {
+                    count: 3000
+                }
+            },
+            methods: {
+                handleincrease: function () {
+                    this.count = this.count + 1000
+                    this.$emit('input', this.count)
+                },
+                handlereduce: function () {
+                    this.count = this.count - 1000
+                    this.$emit('input', this.count)
+                }
+            }
+        })
+
+        var app = new Vue({
+            el: '#app',
+            components: {
+                'app-component': {
+                    template: '<div>我是一个局部组件</div>'
+                }
+            },
+            data: {
+                total: 3000
+            }
+        })
+    </script>
+</body>
+
+</html>

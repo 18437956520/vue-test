@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        
+    </style>
+
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+
+    <div id="app">
+        <my-component>
+   <!--       <template slot="abc" slot-scope="prop">
+            {{prop.text}} <br>
+            {{prop.ttt}}
+        </template> -->
+        <p slot="abc" slot-scope="prop">
+            {{prop.text}} <br>
+            {{prop.ttt}}
+         </p>
+        </my-component>
+    </div>
+
+    <script>
+        Vue.component('my-component',{
+            template:'   <div>\
+                <slot text="我是子组件数据" ttt="123" name="abc">\
+                </slot>\
+            </div>'
+        })
+        
+        var app = new Vue({
+            el:'#app',
+            components:{
+                'app-component':{
+                    template:'<div>我是一个局部组件</div>'
+                }
+            },
+            data:{
+
+            }
+        })
+    </script>
+</body>
+</html>

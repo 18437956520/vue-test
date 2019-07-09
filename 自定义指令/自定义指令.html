@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        
+    </style>
+
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+
+    <div id="app">
+       自动获取焦点 <input type="text" v-focus>  不获取焦点  <input type="text">
+       <hr>
+       <input type="text" v-text="abcde">
+       <hr>
+       <div v-yyyh:zqq.a.b.c="obq">
+
+       </div>
+    </div>
+
+    <script>
+       Vue.directive('focus',{
+           inserted:function(el){
+               el.focus()
+           }
+       })
+
+       Vue.directive('yyyh',{
+           bind:function(el,binding){
+            el.innerHTML = 
+                'name' + '-' +binding.name + '<br>' +
+                'value' + '-' +binding.value + '<br>' +
+                'expression' + '-' +binding.expression + '<br>' +
+                'arguement' + '-' +binding.arg + '<br>' +
+                'modifiers' + '-' +JSON.stringify(binding.modifiers) + '<br>' 
+           }
+       })
+
+    var app = new Vue({
+        el:'#app',
+        data:{
+            abcde:'woshi value',
+            obq:'zidingyi'
+        }
+    })       
+    </script>
+</body>
+</html>

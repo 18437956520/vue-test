@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+
+    <div id="app">
+        <my-component>
+            <!-- <p>neirong</p> -->
+        </my-component>
+        <hr>
+        <myname-component>
+            <h3 slot="header">标题</h3>
+            <p>正文11111</p>
+            <p>正文22222</p>
+            <p slot="footer">底部</p>
+        </myname-component>
+
+   
+    </div>
+    <hr>
+
+
+    <script>
+        Vue.component('my-component', {
+            template: '<div>\
+                <slot>\
+                    如果没有内容 默认出现\
+                </slot>\
+                    </div>',
+        })
+
+        Vue.component('myname-component', {
+            template:      '<div>\
+            <div class="header">\
+                <slot name="header"></slot>\
+            </div>\
+            <div class="content">\
+                <slot></slot>\
+            </div>\
+            <div class="footer">\
+                <slot name="footer"></slot>\
+            </div>\
+        </div>'
+        })
+
+        var app = new Vue({
+            el: '#app',
+            components: {
+                'app-component': {
+                    template: '<div>我是一个局部组件</div>'
+                }
+            },
+            data: {
+                msg: ''
+            }
+        })
+    </script>
+</body>
+
+</html>

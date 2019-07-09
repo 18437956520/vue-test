@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        
+    </style>
+
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+
+    <div id="app">
+        <my-acomponent ref="A"></my-acomponent>
+        <my-bcomponent ref="B"></my-bcomponent>
+        <hr>
+        <child-component ref="C"></child-component>--{{msg}}
+        <hr>
+        <button @click="getData"></button>--{{formchild}}
+    </div>
+
+    <script>
+        Vue.component('my-acomponent',{
+            template:'<div><button @click="handle">向B传递</button></div>',
+            data:function(){
+                return{
+                    aaa:'AAA',
+                    msg:'AMsg'
+                }
+            },
+            methods:{
+                handle:function(){
+                    this.$root.bus.$emit('yyh',this.aaa)
+                }
+            }
+        })
+
+        Vue.component('my-bcomponent',{
+            template:'<div>我是一个全局组件</div>',
+            created:function(){
+                this.$root.bus.$on('yyh',function(value){
+                    alert(value)
+                })
+            },
+            data:function(){
+                return{
+                    msg:'BMsg'
+                }
+            }
+        })
+
+        Vue.component('child-component',{
+            template:'<button @click="setData">点击修改父组件数据</button>',
+            methods:{
+                setData:function(){
+                    this.$parent.msg = '已修改'
+                }
+            },
+            data:function(){
+                return{
+                    msg:'CMsg'
+                }
+            }
+        })
+        
+        var app = new Vue({
+            el:'#app',
+            components:{
+                'app-component':{
+                    template:'<div>我是一个局部组件</div>'
+                }
+            },
+            data:{
+                bus:new Vue(),
+                msg:'未修改',
+                formchild:''
+            },
+            methods:{
+                getData:function(){
+                   this.formchild = this.$refs.C.msg
+                }
+            }
+        })
+    </script>
+</body>
+</html>

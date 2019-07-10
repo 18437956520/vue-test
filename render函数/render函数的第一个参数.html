@@ -15,13 +15,26 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
 
     <div id="app">
-        
+        <child>
+
+        </child>
     </div>
 
     <script>
         Vue.component('child',{
             render:function(createElement){
-              
+              /* return createElement('h1') */
+              //
+              /* return createElement({
+                  template:'<div>12345 上山打老虎</div>'
+              }) */
+              //
+              var domFun = function(){
+                  return{
+                    template:'<div>12345 上山打老虎</div>'
+                  }
+              }
+              return createElement(domFun())
             },
             props:[]
         })

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+
+    <div id="app">
+        <child></child>
+    </div>
+
+    <script>
+        Vue.component('child', {
+            render: function (createElement) {
+                return createElement({
+                    template: '<div>臭弟弟</div>'
+                }, {
+                    class: {
+                        foo: true,
+                            baz: false
+                    },
+                    style: {
+                        color: 'red',
+                        fontSize: '25px'
+                    },
+                    attrs:{
+                        id: 'a',
+                        src: 'http://123.com'
+                    },
+                    domProps:{
+                        innerHTML: '<span>666<span>'
+                    }
+                })
+            }
+        })
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

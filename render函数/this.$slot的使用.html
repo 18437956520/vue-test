@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+
+    <div id="app">
+        <my-component>
+            <p>12345</p>
+            <p>上山打老虎</p>
+            <h3 slot="header">标题</h3>
+            <h5 slot="footer">页尾</h5>
+        </my-component>
+    </div>
+
+    <script>
+        Vue.component('my-component', {
+            render: function (createElement) {
+                var header = this.$slots.header
+                var main = this.$slots.default
+                var footer = this.$slots.footer
+                return createElement('div', [
+                    createElement('header', header),
+                    createElement('main', main),
+                    createElement('footer', footer)
+                ])
+            },
+            props: []
+        })
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+
+            }
+        })
+    </script>
+</body>
+
+</html>

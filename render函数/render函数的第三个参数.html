@@ -21,7 +21,10 @@
     <script>
         Vue.component('child',{
             render:function(createElement){
-              return createElement()
+              return createElement('div',[
+                  createElement('h1','我是h1标题'),
+                  createElement('h3','我是h3标题')
+              ])
             },
             props:[]
         })

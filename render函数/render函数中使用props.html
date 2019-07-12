@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        
+    </style>
+
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+
+    <div id="app">
+        <button @click="imgshow"> </button> {{show}}
+        <child :show="show"></child>
+    </div>
+
+    <script>
+        Vue.component('child',{
+            props:['show'],
+            render:function(createElement){
+                var imgsrc
+                if(this.show){
+                    imgsrc = 'https://www.baidu.com/img/bd_logo1.png?where=super'
+                }else{
+                    imgsrc = 'https://gss0.bdstatic.com/5bVWsj_p_tVS5dKfpU_Y_D3/res/r/image/2017-09-27/297f5edb1e984613083a2d3cc0c5bb36.png'
+                }
+              return createElement('img',{
+                attrs:{
+                    src :imgsrc
+                }
+              })
+            }
+        })
+
+        var app = new Vue({
+            el:'#app',
+            data:{
+                show: true
+            },
+            methods:{
+                imgshow:function(){
+                    this.show = !this.show
+                }
+            }
+        })
+    </script>
+</body>
+</html>
